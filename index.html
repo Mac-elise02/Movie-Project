@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script
+      src="https://kit.fontawesome.com/14f78f4ba5.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but this web application is not
+        currently working properly without the local JavaScript. 
+        Activate the Javascript to continue. 
+      </strong>
+    </noscript>
+    <section id="landing">
+      <nav>
+        <div class="nav__container">
+          <img class="logo" src="./assets/Harry-Potter-Emblem.png" alt="" />
+          <ul class="nav__links">
+            <li>
+              <a href="#" class="nav__link">Home</a>
+            </li>
+            <li>
+              <a href="#" class="nav__link">Contact</a>
+            </li>
+            <li>
+              <a href="#" class="nav__link nav__link--primary">Movies</a>
+            </li>
+          </ul>
+        </div>
+        <button class="btn__menu" onclick="openMenu()">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="menu__backdrop">
+          <button class="btn__menu btn__menu--close" onclick="closeMenu()">
+            <i class="fa-solid fa-times"></i>
+          </button>
+          <ul class="menu__links">
+            <li class="menu__list">
+              <a href="#" class="menu__link" onclick="closeMenu()">Home</a>
+            </li>
+            <li class="menu__list">
+              <a href="#" class="menu__link" onclick="closeMenu()">Movies</a>
+            </li>
+            <li class="menu__list">
+              <a href="#" class="menu__link no-cursor" onclick="closeMenu()">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="search__container">
+        <h2>Which is Your Favorite movie?</h2>
+        <select id="filter" onchange="filterMovies(event)">
+          <option value selected disabled class="filter__option">Sort</option>
+          <option class="filter__option" value="OLDEST_TO_NEWEST">Oldest to Newest</option>
+          <option class="filter__option" value="NEWEST_TO_OLDEST">Newest to Oldest</option>
+        </select>
+        <div class="search__element">
+          <input type="text" class="search__bar" 
+          placeholder="Search Favorite Movie..." />
+          <div class="magnifying__glass">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+        </div>
+        <div class="movie__container">
+          <div class="movie__list">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    <main>
+      <section id="movies__main">
+        <div class="container">
+          <div class="row">
+            <div class="movies__header">
+              <h2 class="section__title movies__header--title">Harry Potter Movies</h2>
+              <select id="filter" onchange="filterMovies(event)">
+                <option value disabled selected>Sort</option>
+                <option value="OLD_TO_NEW"></option>
+                <option value="NEW_TO_OLD"></option>
+                <option value="RATING">rating</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="HP__movies">
+        <div class="container">
+          <div class="row">
+            <h2 class="section__title">List of Movies</h2>
+            <div class="movies">
+              <div class="movie">
+                <figure class="movie__img--wrapper">
+                  <div class="movie__img" src="./assets/harry potter and the sorcerer's stone.jpg"></div>
+                </figure>
+                <div class="movie__title">
+                  Harry Potter and the Sorcerer's Stone
+                </div>
+                <div class="movie__rating">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-alt"></i>
+                </div>
+              </div>
+
+              <div class="movie">
+                <figure class="movie__img--wrapper">
+                  <div class="movie__img" src="./assets/harry potter and the chamber of secrets.jpg"></div>
+                </figure>
+                <div class="movie__title">
+                  Harry Potter and the Chamber of Secrets
+                </div>
+                <div class="movie__rating">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-alt"></i>
+                </div>
+              </div>
+
+              <div class="movie">
+                <figure class="movie__img--wrapper">
+                  <div class="movie__img" src="./assets/Harry_Potter_and_the_Prisoner_of_Azkaban_poster.webp"></div>
+                </figure>
+                <div class="movie__title">
+                  Harry Potter and the Prisoner of Azkaban
+                </div>
+                <div class="movie__rating">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-alt"></i>
+                </div>
+              </div>
+
+              <div class="movie">
+                <figure class="movie__img--wrapper">
+                  <div class="movie__img" src="./assets/harry potter and the goblet of fire.jpg"></div>
+                </figure>
+                <div class="movie__title">
+                  Harry Potter and the Goblet of Fire
+                </div>
+                <div class="movie__rating">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-alt"></i>
+                </div>
+              </div>
+
+              <div class="movie">
+                <figure class="movie__img--wrapper">
+                  <div class="movie__img" src="./assets/harry potter and the order of the phoenix.jpg"></div>
+                </figure>
+                <div class="movie__title">
+                  Harry Potter and the Order of the Phoenix
+                </div>
+                <div class="movie__rating">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-alt"></i>
+                </div>
+              </div>
+
+              <div class="movie">
+                <figure class="movie__img--wrapper">
+                  <div class="movie__img" src="./assets/harry potter and the half-blood prince.jpg"></div>
+                </figure>
+                <div class="movie__title">
+                  Harry Potter and the Half-Blood Prince
+                </div>
+                <div class="movie__rating">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-alt"></i>
+                </div>
+              </div>
+
+              <div class="movie">
+                <figure class="movie__img--wrapper">
+                  <div class="movie__img" src="./assets/harry potter and the deathly hallow p1.jpg"></div>
+                </figure>
+                <div class="movie__title">
+                  Harry Potter and the Deathly Hallows(part 1)
+                </div>
+                <div class="movie__rating">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-alt"></i>
+                </div>
+              </div>
+
+              <div class="movie">
+                <figure class="movie__img--wrapper">
+                  <div class="movie__img" src="./assets/harry potter and the deathly hallow p2.jpg"></div>
+                </figure>
+                <div class="movie__title">
+                  Harry Potter and the Deathly Hallow(part 2)
+                </div>
+                <div class="movie__rating">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-alt"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="row row__column">
+          <a href="#">
+            <figure class="footer__logo">
+              <img src="./assets/Harry-Potter-Emblem.png" class="footer__logo--img" alt="">
+            </figure>
+          </a>
+          <div class="footer__list">
+            <a href="" class="footer__link">Home</a>
+            <a href="" class="footer__link">About</a>
+            <a href="" class="footer__link">Movies</a>
+            <a href="" class="footer__link no__cursor">Contact</a>
+          </div>
+          <div class="footer__copyright">Copyright &copy; 2025</div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
