@@ -296,7 +296,18 @@ footer {
 
 /* SMALL PHONES, TABLETS, LARGE SMARTPHONES */ 
 
-@media (max-width: 480px) {
+@media (max-width:786px) {
+
+    button {
+        font-size: 18px; 
+    }
+
+    .movie {
+        width: 50%; 
+    }
+}
+
+@media (max-width: 550px) {
     .nav__links {
         display: none;
     }
