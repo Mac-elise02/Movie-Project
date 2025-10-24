@@ -5,17 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./styles.css" />
-    <script
-      src="https://kit.fontawesome.com/14f78f4ba5.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/14f78f4ba5.js" crossorigin="anonymous"></script>
     <script src="index.js"></script>
   </head>
-  <body>
+
+  <body> 
     <noscript>
       <strong>We're sorry but this web application is not
-        currently working properly without the local JavaScript. 
-        Activate the Javascript to continue. 
+        currently working properly without the local JavaScript.
+        Activate the Javascript to continue.
       </strong>
     </noscript>
     <section id="landing">
@@ -61,13 +59,6 @@
           <option class="filter__option" value="OLDEST_TO_NEWEST">Oldest to Newest</option>
           <option class="filter__option" value="NEWEST_TO_OLDEST">Newest to Oldest</option>
         </select>
-        <div class="search__element">
-          <input type="text" class="search__bar" 
-          placeholder="Search Favorite Movie..." />
-          <div class="magnifying__glass">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </div> 
-        </div>
         <div class="movie__container">
           <div class="movie__list">
           </div>
@@ -75,89 +66,95 @@
       </div>
     </div>
   </section>
-    <main>
-      <section id="movies__main">
-        <div class="container">
-          <div class="row">
-            <div class="movies__header">
-              <h2 class="section__title movies__header--title">Harry Potter Movies</h2>
-            </div>
+    <main id="movies__main">
+      <div class="container">
+        <div class="row">
+          <div class="movies__header">
+            <h2 class="section__title movies__header--title">Harry Potter Movies</h2>
           </div>
         </div>
-      </section>
+      </div>
       <section id="HP__movies">
         <div class="container">
           <div class="row">
             <div class="movies">
-              <div class="movie">
-                <figure class="movie__img--wrapper">
-                  <div class="movie__img" src="./assets/harry potter and the sorcerer's stone.jpg"></div>
-                </figure>
-                <div class="movie__title">
-                  Harry Potter and the Sorcerer's Stone
-                </div>
-              </div>
 
               <div class="movie">
                 <figure class="movie__img--wrapper">
-                  <div class="movie__img" src="./assets/harry potter and the chamber of secrets.jpg"></div>
+                  <img class="movie__img" src="./assets/sorcerer's stone.jpg"></img>
                 </figure>
                 <div class="movie__title">
-                  Harry Potter and the Chamber of Secrets
+                  The Sorcerer's Stone
                 </div>
               </div>
 
-              <div class="movie">
-                <figure class="movie__img--wrapper">
-                  <div class="movie__img" src="./assets/Harry_Potter_and_the_Prisoner_of_Azkaban_poster.webp"></div>
-                </figure>
-                <div class="movie__title">
-                  Harry Potter and the Prisoner of Azkaban
-                </div>
-              </div>
 
               <div class="movie">
                 <figure class="movie__img--wrapper">
-                  <div class="movie__img" src="./assets/harry potter and the goblet of fire.jpg"></div>
+                  <img class="movie__img" src="./assets/chamber of secrets.jpg"></img>
                 </figure>
                 <div class="movie__title">
-                  Harry Potter and the Goblet of Fire
+                  The Chamber of Secrets
                 </div>
               </div>
 
-              <div class="movie">
-                <figure class="movie__img--wrapper">
-                  <div class="movie__img" src="./assets/harry potter and the order of the phoenix.jpg"></div>
-                </figure>
-                <div class="movie__title">
-                  Harry Potter and the Order of the Phoenix
-                </div>
-              </div>
 
               <div class="movie">
                 <figure class="movie__img--wrapper">
-                  <div class="movie__img" src="./assets/harry potter and the half-blood prince.jpg"></div>
+                  <img class="movie__img" src="./assets/prisoner of Azkaban.webp"></img>
                 </figure>
                 <div class="movie__title">
-                  Harry Potter and the Half-Blood Prince
+                  The Prisoner of Azkaban
                 </div>
               </div>
 
-              <div class="movie">
-                <figure class="movie__img--wrapper">
-                  <div class="movie__img" src="./assets/harry potter and the deathly hallow p1.jpg"></div>
-                </figure>
-                <div class="movie__title">
-                  Harry Potter and the Deathly Hallows(part 1)
-                </div>
-              </div>
 
               <div class="movie">
                 <figure class="movie__img--wrapper">
-                  <div class="movie__img" src="./assets/harry potter and the deathly hallow p2.jpg"></div>
+                  <img class="movie__img" src="./assets/goblet of fire.jpg"></img>
                 </figure>
                 <div class="movie__title">
-                  Harry Potter and the Deathly Hallows(part 2)
+                  The Goblet of Fire
+                </div>
+              </div>
+
+
+              <div class="movie">
+                <figure class="movie__img--wrapper">
+                  <img class="movie__img" src="./assets/order of the phoenix.jpg"></img>
+                </figure>
+                <div class="movie__title">
+                  The Order of the Phoenix
+                </div>
+              </div>
+
+
+              <div class="movie">
+                <figure class="movie__img--wrapper">
+                  <img class="movie__img" src="./assets/half-blood prince.jpg"></img>
+                </figure>
+                <div class="movie__title">
+                  The Half-Blood Prince
+                </div>
+              </div>
+
+
+              <div class="movie">
+                <figure class="movie__img--wrapper">
+                  <img class="movie__img" src="./assets/deathly hallows part 1.jpg"></img>
+                </figure>
+                <div class="movie__title">
+                  The Deathly Hallows(part 1)
+                </div>
+              </div>
+
+
+              <div class="movie">
+                <figure class="movie__img--wrapper">
+                  <img class="movie__img" src="./assets/deathly hallows part 2.jpg"></img>
+                </figure>
+                <div class="movie__title">
+                  The Deathly Hallows(part 2)
                 </div>
               </div>
             </div>
@@ -165,6 +162,7 @@
         </div>
       </section>
     </main>
+
     <footer>
       <div class="container">
         <div class="row row__column">
