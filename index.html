@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Potter</title>
+    <link rel="icon" href="data:,">
     <link rel="stylesheet" href="./styles.css" />
     <script src="https://kit.fontawesome.com/14f78f4ba5.js" crossorigin="anonymous"></script>
     <script src="index.js"></script>
@@ -54,18 +55,15 @@
       </nav>
       <div class="search__container">
         <h2>Which is Your Favorite movie?</h2>
-        <select id="filter" onchange="filterMovies(event)">
-          <option value selected disabled class="filter__option">Sort</option>
-          <option class="filter__option" value="OLDEST_TO_NEWEST">Oldest to Newest</option>
-          <option class="filter__option" value="NEWEST_TO_OLDEST">Newest to Oldest</option>
-        </select>
-        <div class="movie__container">
-          <div class="movie__list">
+        <div class="search">
+          <input type="text" placeholder="Harry Potter and..." 
+          class="search__input" oninput="handleSearch(this.value)" /> 
+          <div class="search__glass">
+            <i class="fa-solid fa-magnifying-glass"></i>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
     <main id="movies__main">
       <div class="container">
         <div class="row">

@@ -6,47 +6,58 @@ function closeMenu() {
   document.body.classList.remove("menu--open");
 }
 
- let movies; 
+async function fetchMovies(potter) {
+  const API_KEY = "50afa4e2";
+  const searchQuery = "potter"; 
+
+  const response = await fetch(`https://www.omdbapi.com/?i=${tt3896198}&apikey=50afa4e2&s=${potter}`); 
+
+  const data = await response.json(); 
+
+  if (!data.Search) return[]; 
+
+  return data.Search.map(movie => ({
+    title: movie.title, 
+    year: movie.Year, 
+    imdbID: movie.imdbID, 
+    url: movie.Poster, 
+    rating: Math.random() * 5 })); 
+  } 
+
+
+let movies = null; 
+let currentSearch = "potter"; 
 
 async function renderMovies(filter) {
   const MovieWrapper = document.querySelector(".Movies"); 
 
   if(!movies) {
-    movies = await getMovies(); 
+    movies = await fetchMovies(currentSearch); 
   }
 
-  MovieWrapper.classList.remove('movies__loading')
+  moviesWrapper.classList.remove('movies__loading'); 
 
   if(filter === "OLD_TO_NEW") {
-    movies.sort(
-      (a, b) =>
-      (a.old) - (b.new)
-    ); 
-  }
-  else if (filter === "NEW_TO_OLD") {
-    movies.sort(
-      (a, b) =>
-      (b.new) - (a.old)
-    ); 
-  }
-  else if (filter === "RATING") {
+    movies.sort((a, b) => Number(a.year) - Number(b.year)); 
+  } else if (filter === "NEW_TO_OLD") {
+    movies.sort((a, b) => Number(b.year) - Number(a.year)); 
+  } else if (filter === "RATING") {
     movies.sort((a, b) => b.rating - a.rating); 
   }
 
-const indexHtml = movies 
-.map((movie) => {
-  return `<div class="movie">
-                <figure class="movie__img--wrapper">
-                  <div class="movie__img" src="${movie.url}"></div>
-                </figure>
-                <div class="movie__title">
-                  ${movie.title}
-                </div>
-                <div class="movie__rating">
-                  ${ratingsHTML(movie.rating)}
-                </div>
-              </div>`
-})
+const moviesHtml = movies .map(movie => 
+  `<div class="movie">
+     <figure class="movie__img--wrapper">
+       <div class="movie__img" src="${movie.url}"></div>
+     </figure>
+     <div class="movie__title">
+       ${movie.title}
+     </div>
+     <div class="movie__rating">
+       ${ratingsHTML(movie.rating)}
+     </div>
+   <div>`
+)
 .join(""); 
 
   moviesWrapper.innerHTML = moviesHtml; 
@@ -62,13 +73,23 @@ function ratingsHTML(rating) {
   }
   return ratingHTML; 
 }
+
 function filterMovies(event) {
   renderMovies(event.target.value); 
 }
 
-setTimeout (() => {
-  renderMovies(); 
-}); 
+let searchTimeout; 
+
+function handleSearch(value) {
+  clearTimeout(searchTimeout); 
+
+  searchTimeout = setTimeout(async () => {
+    currentSearch = value.trim() || "potter"; 
+
+    movie = await fetchMovies(currentSearch); 
+    renderMovies(); 
+  }, 400); 
+}
 
 // DATA API
 function getMovies() {
