@@ -1,5 +1,5 @@
 function openMenu() {
-  document.body.classList += " menu--open";
+  document.body.classList.add(" menu--open");
 }
 
 function closeMenu() {
@@ -9,7 +9,7 @@ function closeMenu() {
 async function fetchMovies(search = "potter") {
   const API_KEY = "50afa4e2";
 
-  const response = await fetch(`https://www.omdbapi.com/?apikey=${50afa4e2}&s=${potter}`); 
+  const response = await fetch(`https://www.omdbapi.com/?apikey=${"50afa4e2"}&s=${potter}`); 
 
   const data = await response.json(); 
 
@@ -36,9 +36,11 @@ async function renderMovies(filter) {
 
   if(filter === "OLD_TO_NEW") {
     movies.sort((a, b) => Number(a.year) - Number(b.year)); 
-  } else if (filter === "NEW_TO_OLD") {
+  } 
+  else if (filter === "NEW_TO_OLD") {
     movies.sort((a, b) => Number(b.year) - Number(a.year)); 
-  } else if (filter === "RATING") {
+  } 
+  else if (filter === "RATING") {
     movies.sort((a, b) => b.rating - a.rating); 
   }
 
@@ -81,3 +83,5 @@ function handleSearch(value) {
     renderMovies(); 
   }, 400); 
 }
+
+renderMovies(); 
