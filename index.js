@@ -9,7 +9,7 @@ function closeMenu() {
 async function fetchMovies(search = "potter") {
   const API_KEY = "50afa4e2";
 
-  const response = await fetch(`https://www.omdbapi.com/?apikey=${"50afa4e2"}&s=${potter}`); 
+  const response = await fetch(`https://www.omdbapi.com/?apikey=50afa4e2&s=${potter}`); 
 
   const data = await response.json(); 
 
