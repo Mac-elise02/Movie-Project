@@ -257,6 +257,21 @@ input[type="text"]::placeholder {
     justify-content: center;
 }
 
+.sort__select {
+    padding: 10px 14px; 
+    font-size: 18px; 
+    border-radius: 8px; 
+    border: none; 
+    background: rgb(180, 0, 9); 
+    color: white; 
+    margin: 20px auto; 
+    display: block;
+    cursor: pointer;
+}
+.sort__select option{
+    color: black;
+}
+
 #HP__movies {
     padding-top: 8vw; 
     background-color: rgba(88, 66, 214, 0.1);

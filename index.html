@@ -62,6 +62,12 @@
         <div class="row">
           <div class="movies__header">
             <h2 class="section__title movies__header--title">Harry Potter Movies</h2>
+            <select id="sortMovies" onchange="renderMovies(this.value)" class="sort__select">
+              <option value="">Sort Movies</option>
+              <option value="OLD_TO_NEW">Old to New</option>
+              <option value="NEW_TO_OLD">New to Old</option>
+              <option value="RATING">Rating</option>
+            </select>
           </div>
         </div>
       </div>
